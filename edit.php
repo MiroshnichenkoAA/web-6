@@ -182,7 +182,7 @@ else {
     }
     include('connect.php');
     if(!$errors){
-        $upd=$db->prepare("update application set name=:name,email=:mail,year=:date,sex=:sex,limbs=:limb,bio=:bio where id=:id");
+        $upd=$db->prepare("update form set name=:name,email=:mail,year=:date,sex=:sex,limbs=:limb,bio=:bio where id=:id");
         $cols=array(
         ':name'=>$name,
         ':mail'=>$mail,
