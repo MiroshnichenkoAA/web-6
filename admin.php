@@ -80,7 +80,7 @@ print('Вы успешно авторизовались и видите защи
               <td> <?php print($user['year']);?></td>
               <td> <?php print($user['sex']);?></td>
               <td> <?php print($user['limb']);?></td>
-              <td>';
+              <td>
               <?php  $user_pwrs=array(
                     "immortal"=>FALSE,
                     "megabrain"=>FALSE,
