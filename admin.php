@@ -25,7 +25,7 @@ print('Вы успешно авторизовались и видите защи
   $power_def=array('immortal','teleport','megabrain');
   $powers_count=array();
   try{
-    $get=$db->prepare("select * from application");
+    $get=$db->prepare("select * from form");
     $get->execute();
     $inf=$get->fetchALL();
     $get2=$db->prepare("select p_id,p_name from power");
@@ -72,7 +72,8 @@ print('Вы успешно авторизовались и видите защи
         <th>Bio</th>
       </tr>
       <?php
-      foreach($users as $user){ ?>
+      foreach($users as $user)
+      { ?>
           
             <tr>
               <td> <?php print( $user['name'] );?></td>
@@ -112,7 +113,8 @@ print('Вы успешно авторизовались и видите защи
                   <input type="submit" value=Edit>
                 </form>
               </td>
-            </tr> <?php
+            </tr> 
+            <?php
        }
       ?>
     </table>
