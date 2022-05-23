@@ -3,7 +3,7 @@
 require('connect.php');
 $pass_hash=array();
 try{
-  $get=$db->prepare("select password from administration where username=?");
+  $get=$db->prepare("select password from admins where admin_name=?");
   $get->execute(array('admin'));
   $pass_hash=$get->fetchAll()[0][0];
 }
