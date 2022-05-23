@@ -47,21 +47,23 @@ print('Вы успешно авторизовались и видите защи
 ?>
 //Таблица
   <style>
-  .form1{
-    max-width: 960px;
-    text-align: center;
+    table{
     margin: 0 auto;
+    text-align: center;
   }
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+ 
   .error {
     border: 2px solid red;
   }
-  .hidden{
-    display: none;
-  }
+ 
 </style>
 <body>
   <div class="table1">
-    <table border="1">
+    <table>
       <tr>
         <th>Name</th>
         <th>Email</th>
@@ -80,7 +82,7 @@ print('Вы успешно авторизовались и видите защи
               <td> <?php print($user['email']);?></td>
               <td> <?php print($user['year']);?></td>
               <td> <?php print($user['sex']);?></td>
-              <td> <?php print($user['limb']);?></td>
+              <td> <?php print($user['limbs']);?></td>
               <td>
               <?php  $user_pwrs=array(
                     "immortal"=>FALSE,
