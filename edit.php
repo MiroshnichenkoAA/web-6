@@ -94,23 +94,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $get->execute();
       $inf=$get->fetchALL();
       $values['name']=$inf[0]['name'];
-      $values['email']=$inf[0]['mail'];
-      $values['year']=$inf[0]['date'];
+      $values['email']=$inf[0]['email'];
+      $values['year']=$inf[0]['year'];
       $values['sex']=$inf[0]['sex'];
-      $values['limbs']=$inf[0]['limb'];
+      $values['limbs']=$inf[0]['limbs'];
       $values['bio']=$inf[0]['bio'];
       $get2=$db->prepare("select p_name from power where p_id=?");
       $get2->bindParam(1,$id);
       $get2->execute();
       $inf2=$get2->fetchALL();
       for($i=0;$i<count($inf2);$i++){
-        if($inf2[$i]['power']=='immortal'){
+        if($inf2[$i]['p_name']=='immortal'){
           $values['immortal']=1;
         }
-        if($inf2[$i]['power']=='megabrain'){
+        if($inf2[$i]['p_name']=='megabrain'){
           $values['megabrain']=1;
         }
-        if($inf2[$i]['power']=='teleport'){
+        if($inf2[$i]['p_name']=='teleport'){
           $values['teleport']=1;
         }
       }
